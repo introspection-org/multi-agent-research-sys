@@ -7,7 +7,7 @@ A multi-agent research system built with **Vercel AI SDK v6** and **Valyu AI SDK
 | Agent | Domain | Valyu Tools |
 |-------|--------|-------------|
 | **Financial Analyst** | SEC filings, stock data, earnings, economic indicators | `secSearch`, `financeSearch`, `economicsSearch` |
-| **Medical Researcher** | Clinical trials, drug discovery, FDA data, biomedical papers | `bioSearch`, `paperSearch` |
+| **Scientist** | Clinical trials, drug discovery, FDA data, biomedical papers | `bioSearch`, `paperSearch` |
 | **Journalist** | Real-time news, current events, web research | `webSearch` |
 
 The **Orchestrator** analyzes each query and delegates to the right specialist(s). For cross-domain questions, it calls multiple agents and synthesizes the results.
@@ -42,7 +42,7 @@ Open http://localhost:3000
 ```
 User → Chat UI → /api/chat → Orchestrator Agent
                                 ├── Financial Analyst Agent (SEC, finance, economics)
-                                ├── Medical Researcher Agent (bio, papers)
+                                ├── Scientist Agent (bio, papers)
                                 └── Journalist Agent (web search)
 ```
 
@@ -53,5 +53,5 @@ Each specialist agent is wrapped as a tool that the orchestrator can call. The o
 - Next.js 16 (App Router)
 - Vercel AI SDK v6 (`ToolLoopAgent`, `createAgentUIStreamResponse`)
 - Valyu AI SDK (`@valyu/ai-sdk`)
-- Anthropic Claude (claude-sonnet-4-6)
+- Anthropic Claude (claude-haiku-4-5)
 - Tailwind CSS v4
