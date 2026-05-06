@@ -72,5 +72,5 @@ Your job:
     journalist: journalistTool,
   },
   stopWhen: stepCountIs(10),
-  telemetry: getIntrospectionTelemetry("research-orchestrator"),
+  experimental_telemetry: getIntrospectionTelemetry("research-orchestrator"),
 });

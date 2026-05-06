@@ -19,7 +19,7 @@ When responding:
 - Distinguish between confirmed facts and unverified reports
 - Provide publication dates so readers know how current the information is
 - Summarize key points clearly, then provide supporting details`,
-  telemetry: getIntrospectionTelemetry("journalist"),
+  experimental_telemetry: getIntrospectionTelemetry("journalist"),
   tools: {
     webSearch: webSearch({ maxNumResults: 5, responseLength: "short" }),
   },

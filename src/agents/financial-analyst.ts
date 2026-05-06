@@ -18,7 +18,7 @@ When responding:
 - Highlight key risks, trends, and material changes
 - Compare metrics across periods when relevant
 - Be precise about numbers — never approximate when exact data is available`,
-  telemetry: getIntrospectionTelemetry("financial-analyst"),
+  experimental_telemetry: getIntrospectionTelemetry("financial-analyst"),
   tools: {
     secSearch: secSearch({ maxNumResults: 3, responseLength: "short" }),
     financeSearch: financeSearch({ maxNumResults: 3, responseLength: "short" }),

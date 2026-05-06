@@ -19,7 +19,7 @@ When responding:
 - Note the phase of clinical trials and their primary endpoints
 - Flag any safety concerns or adverse events mentioned in the data
 - Use proper medical terminology but explain it when needed`,
-  telemetry: getIntrospectionTelemetry("scientist"),
+  experimental_telemetry: getIntrospectionTelemetry("scientist"),
   tools: {
     bioSearch: bioSearch({ maxNumResults: 3, responseLength: "short" }),
     paperSearch: paperSearch({ maxNumResults: 3, responseLength: "short" }),
