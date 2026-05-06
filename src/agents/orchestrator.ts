@@ -4,6 +4,7 @@ import { z } from "zod";
 import { financialAnalystAgent } from "./financial-analyst";
 import { scientistAgent } from "./scientist";
 import { journalistAgent } from "./journalist";
+import { getIntrospectionTelemetry } from "@/lib/introspection";
 
 const financialAnalystTool = tool({
   description:
@@ -71,4 +72,5 @@ Your job:
     journalist: journalistTool,
   },
   stopWhen: stepCountIs(10),
+  telemetry: getIntrospectionTelemetry("research-orchestrator"),
 });

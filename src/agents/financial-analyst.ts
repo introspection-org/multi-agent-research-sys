@@ -1,6 +1,7 @@
 import { ToolLoopAgent } from "ai";
 import { anthropic } from "@ai-sdk/anthropic";
 import { secSearch, financeSearch, economicsSearch } from "@valyu/ai-sdk";
+import { getIntrospectionTelemetry } from "@/lib/introspection";
 
 export const financialAnalystAgent = new ToolLoopAgent({
   model: anthropic("claude-haiku-4-5-20251001"),
@@ -17,6 +18,7 @@ When responding:
 - Highlight key risks, trends, and material changes
 - Compare metrics across periods when relevant
 - Be precise about numbers — never approximate when exact data is available`,
+  telemetry: getIntrospectionTelemetry("financial-analyst"),
   tools: {
     secSearch: secSearch({ maxNumResults: 3, responseLength: "short" }),
     financeSearch: financeSearch({ maxNumResults: 3, responseLength: "short" }),

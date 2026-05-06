@@ -1,6 +1,7 @@
 import { ToolLoopAgent } from "ai";
 import { anthropic } from "@ai-sdk/anthropic";
 import { bioSearch, paperSearch } from "@valyu/ai-sdk";
+import { getIntrospectionTelemetry } from "@/lib/introspection";
 
 export const scientistAgent = new ToolLoopAgent({
   model: anthropic("claude-haiku-4-5-20251001"),
@@ -18,6 +19,7 @@ When responding:
 - Note the phase of clinical trials and their primary endpoints
 - Flag any safety concerns or adverse events mentioned in the data
 - Use proper medical terminology but explain it when needed`,
+  telemetry: getIntrospectionTelemetry("scientist"),
   tools: {
     bioSearch: bioSearch({ maxNumResults: 3, responseLength: "short" }),
     paperSearch: paperSearch({ maxNumResults: 3, responseLength: "short" }),
